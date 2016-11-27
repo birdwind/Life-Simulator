@@ -27,6 +27,7 @@ public class MainGame extends AppCompatActivity {
     public static User curUser;
     public static int userId;  // the currently playing user's id
     private Cursor userCursor;  // the currently playing user's cursor in the Database
+    private LevelManager lvManager;
 
     private RelativeLayout parentRelative;  //背景
     private DB_Facade user_db_facade;
@@ -37,6 +38,17 @@ public class MainGame extends AppCompatActivity {
 
     private void initiate(){
         user_db_facade = User_DB_Facade.getFacade();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        int exp = curUser.getExp();
+        int lv = curUser.getLv()+1;
+        //更新經驗條
+        userLvTxt.setText(lv+"");
+        expBar.setMax(lvManager.getMaxExpNeed());
+        expBar.setProgress(exp);
     }
 
     /*******  載入使用者資料 *******/
@@ -63,22 +75,21 @@ public class MainGame extends AppCompatActivity {
         else
             parentRelative.setBackgroundResource(R.drawable.girl_room);
 
-        //儲存使用者資料
+        //讀取使用者資料
         String userName = userCursor.getString(User_DB_Facade.COLUMN_TEXT_NAME);
         int userEXP = userCursor.getInt(User_DB_Facade.COLUMN_INT_EXP);
         int userLV = userCursor.getInt(User_DB_Facade.COLUMN_INT_LV);
-        userNameTxt.setText(userName);
-        userLvTxt.setText((userLV+1)+"");
         curUser = new User(userName,userEXP,userLV,userSex);
 
 
-        //建立LevelManager來管理等級經驗 作為第一次使用需要傳入User
-        LevelManager lvManager = LevelManager.getLevelManager(curUser);
+        lvManager = LevelManager.getLevelManager(curUser);
 
         //登入獎勵
         lvManager.updateEXP(25);
 
-        //更新經驗條
+        //更新
+        userNameTxt.setText(userName);
+        userLvTxt.setText((curUser.getLv()+1)+"");
         expBar.setMax(lvManager.getMaxExpNeed());
         expBar.setProgress(curUser.getExp());
     }

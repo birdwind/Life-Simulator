@@ -43,7 +43,6 @@ public class LevelManager {
 
     //for first use
     public static LevelManager getLevelManager(User user){
-        if ( levelManager == null )
             levelManager = new LevelManager(user);
         return levelManager;
     }
