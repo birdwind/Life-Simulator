@@ -40,6 +40,14 @@
                 android:background="#00ffffff"
                 android:id="@+id/scheduleBTN_GAME"
                 android:onClick="itemOnClick"/>
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:background="#00000000"
+                android:src="@drawable/checklist_button_icon"
+                android:id="@+id/checklistBTN_GAME"
+                android:onClick="itemOnClick"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.waterball.life_simulator2.CheckList.CheckList_Activity;
 import com.waterball.life_simulator2.DB_Facades.DB_Facade;
 import com.waterball.life_simulator2.DB_Facades.User_DB_Facade;
 import com.waterball.life_simulator2.Memo.Memo_Activity;
@@ -118,6 +119,9 @@ public class MainGame extends AppCompatActivity {
                 break;
             case R.id.scheduleBTN_GAME:
                 goToItem.setClass(MainGame.this, ScheduleActivity.class);
+                break;
+            case R.id.checklistBTN_GAME:
+                goToItem.setClass(MainGame.this,  CheckList_Activity.class);
                 break;
         }
 

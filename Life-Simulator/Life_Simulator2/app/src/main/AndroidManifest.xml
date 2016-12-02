@@ -24,6 +24,13 @@
                 <action android:name="android.intent.action.Add" />
             </intent-filter>
         </activity>
+        <activity android:name=".CheckList.CheckList_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CheckList.CheckList_Add_Activity" />
+        <activity android:name=".CheckList.CheckList_Add_Reset_Activity"/>
         <activity android:name=".Memo.Memo_item_page" />
         <activity android:name=".Memo.Memo_Item_Content" />
         <activity android:name=".Schedule.ScheduleActivity"></activity>
