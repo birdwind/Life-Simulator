@@ -36,11 +36,14 @@ public abstract class DB_Facade {
         this.TABLE_NAME = tableName;
     }
     public abstract void createTable() ;  //創建table
+
+    //刪除TABLE
     public void dropTable(){
         if ( TABLE_NAME == null )
             throw new SQLException("刪除之table無初始化");
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
     }
+
     public void deleteTuple(int id) {  //刪除資料 傳入該資料id
             try {
                 db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE _id = " + id);
@@ -50,11 +53,15 @@ public abstract class DB_Facade {
     }
 
     public abstract void InsertTuple(Item item) ;  //新增資料 傳入資料封裝好的item
+
     public abstract void ModifyTuple(int id , Item item) ;  //修改資料 傳入id 及 修改結果之Item
+
     public Cursor getAll() throws SQLException{  //顯示所有資料
         return db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
     }
+
     public abstract Cursor getSpecifiedTupleByName(Item item)  ;  //搜尋特定資料by Name
+
     public Cursor getSpecifiedTupleById(int id) {  //搜尋特定資料by Id
         try {
             Log.d("myLog","從"+TABLE_NAME+"取得資料 : id "+id);

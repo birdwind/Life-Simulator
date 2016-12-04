@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.waterball.life_simulator2.CheckList.CheckList_Activity;
 import com.waterball.life_simulator2.DB_Facades.DB_Facade;
 import com.waterball.life_simulator2.DB_Facades.User_DB_Facade;
+import com.waterball.life_simulator2.DayCount.DayCount_Activity;
 import com.waterball.life_simulator2.Memo.Memo_Activity;
 import com.waterball.life_simulator2.Schedule.ScheduleActivity;
 import com.waterball.life_simulator2.User.LevelManager;
@@ -123,6 +124,10 @@ public class MainGame extends AppCompatActivity {
             case R.id.checklistBTN_GAME:
                 goToItem.setClass(MainGame.this,  CheckList_Activity.class);
                 break;
+            case R.id.daycountBTN_GAME:
+                goToItem.setClass(MainGame.this,  DayCount_Activity.class);
+                break;
+
         }
 
         startActivity(goToItem);
