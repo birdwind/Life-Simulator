@@ -136,10 +136,10 @@ Schedule facade介面建立
 
 增加經驗值系統，增加卡片瀏覽模式
 
+12/5 鳥豐:
 
+增加倒數日基本架構
 
-
-When finished your task, you can add some new features like 倒數日
 
 測試status ~~~
 
