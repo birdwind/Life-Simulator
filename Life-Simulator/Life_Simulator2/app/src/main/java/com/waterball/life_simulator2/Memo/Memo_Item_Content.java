@@ -41,8 +41,13 @@ public class Memo_Item_Content extends AppCompatActivity {
         for ( int i = 0 ; i < memoList.size() ; i ++ )
             if ( memoList.get(i).getId() == currentMemoId )
             {
+
                 currentMemo = memoList.get(i);
                 currentPosition = i;
+                Log.d("myLog","i" +memoList.get(i) );
+                Log.d("myLog","id" +memoList.get(i).getId() );
+                Log.d("myLog","c" +currentMemoId );
+                Log.d("myLog","i" +currentMemo );
                 break;
             }
     }
@@ -102,7 +107,8 @@ public class Memo_Item_Content extends AppCompatActivity {
                         int id = currentMemo.getId();
                         memo_db_facade.deleteTuple(id);
                         memoList.remove(currentPosition);
-
+                        Log.d("MyLog" , "當" + id);
+                        Log.d("MyLog" , "位置" + currentPosition);
                         levelManager.updateEXP(-15);
                         finish();
                     }

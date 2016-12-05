@@ -34,6 +34,7 @@ public class CheckList_Add_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_list__add_);
         processViews();
+        loadDataIfEditing();
         //-----------------待更新-------------------------
         final GregorianCalendar calendar = new GregorianCalendar();
         dateED.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,15 @@ public class CheckList_Add_Activity extends AppCompatActivity {
         }, calendar.get(Calendar.YEAR) , calendar.get(Calendar.MONTH) ,calendar.get(Calendar.MONDAY));
 
         //-----------------待更新-------------------------
+    }
+    private void loadDataIfEditing(){
+        Intent intent = getIntent();
+        if ( intent.getAction() == "android.intent.action.EDIT" )
+        {
+            titleED.setText(intent.getStringExtra(CheckList.TITLE_STRING));
+            dateED.setText(intent.getStringExtra(CheckList.DATE_STRING));
+            contentED.setText(intent.getStringExtra(CheckList.CONTENT_STRING));
+        }
     }
     public void onSubmit(View view) {
         Button btn = (Button)view;

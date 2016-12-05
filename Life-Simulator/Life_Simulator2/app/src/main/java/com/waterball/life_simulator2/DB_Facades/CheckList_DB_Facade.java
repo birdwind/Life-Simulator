@@ -26,39 +26,20 @@ public class CheckList_DB_Facade extends DB_Facade {
         DB_Facade user_db_facade = User_DB_Facade.getFacade();
         try{
             db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (_id INTEGER  ," + USER_ID + " INTEGER ," +
-                    CHECKLIST_NAME + " TEXT ," + CHECKLIST_CONTENT + " TEXT ," + CHECKLIST_DATE + " TEXT ," +" "/* + CHECKLIST_TIEM + "TEXT"*/ +
+                    CHECKLIST_NAME + " TEXT ," + CHECKLIST_CONTENT + " TEXT ," + CHECKLIST_DATE + " TEXT ," +" "+
                     " PRIMARY KEY (_id ," + USER_ID +"))" );
         }catch (SQLException err){
             Log.d("myLog",err.toString());
-       /* try{
-            db.execSQL("CREATE TABLE IF NOT EXISTS " +
-                    TABLE_NAME +
-                    " (_id INTEGER PRIMARY KEY ," +
-                    USER_ID + " INTEGER ," +
-                    CHECKLIST_NAME + " TEXT ," +
-                    CHECKLIST_CONTENT + " TEXT ,"+*/
-                    /*CHECKLIST_DATE+" TEXT,"+*/ /*" " +
-                    "FOREIGN KEY ("+USER_ID+") REFERENCES "+ user_db_facade.TABLE_NAME+" (_id))" );
-        }catch (SQLException err){
-            Log.d("myLog",err.toString());*/
+
         }
     }
     @Override  //新增 傳入該資料的封裝物件
     public void InsertTuple(Item item) {
         CheckList checklist = (CheckList)item;
-       /*try {
-            db.execSQL("INSERT INTO " + TABLE_NAME +
-                    " (" + CHECKLIST_NAME + "," +
-                    CHECKLIST_CONTENT +","+*/
-                   /* CHECKLIST_DATE+","+*/
-                   /* USER_ID+") values ('"
-                    + checklist.getName() + "','" + checklist.getContent()+"','"/*+checklist.getDate()+"',"*//*+checklist.getUserId()+")");
-        }catch (SQLException err){
-            Log.d("myLog",err.toString());
-        }*/
+
         try {
-            db.execSQL("INSERT INTO " + TABLE_NAME + " (" + CHECKLIST_NAME + "," + CHECKLIST_CONTENT +","+CHECKLIST_DATE+/*","+CHECKLIST_TIEM+*/","+USER_ID+") values ('"
-                    + checklist.getName() + "','" + checklist.getContent() +"','"+checklist.getDate()/*+ "','"+checklist.getTime()*/+"',"+checklist.getUserId()+")");
+            db.execSQL("INSERT INTO " + TABLE_NAME + " (" + CHECKLIST_NAME + "," + CHECKLIST_CONTENT +","+CHECKLIST_DATE+","+USER_ID+") values ('"
+                    + checklist.getName() + "','" + checklist.getContent() +"','"+checklist.getDate()+"',"+checklist.getUserId()+")");
         }catch (SQLException err){
             Log.d("myLog",err.toString());
         }
@@ -67,18 +48,11 @@ public class CheckList_DB_Facade extends DB_Facade {
     @Override  //修改 傳入id 跟 修改之後的結果物件
     public void ModifyTuple(int id, Item item) throws SQLException {
         CheckList checklist = (CheckList)item;
-        /*try {
-            db.execSQL("UPDATE " + TABLE_NAME + " SET " +
-                    CHECKLIST_NAME + "='" + checklist.getName() + "'," +
-                    CHECKLIST_CONTENT + "='" + checklist.getContent()  +  "','" +*/
-                    /*CHECKLIST_DATE +" ='" +checklist.getDate() +*//*"' WHERE _id=" + id);
-        }catch (SQLException err){
-            Log.d("myLog",err.toString());
-        }*/
+
         try {
             db.execSQL("UPDATE " + TABLE_NAME + " SET " + CHECKLIST_NAME + "='" + checklist.getName()
                     + "'," + CHECKLIST_CONTENT + "='" + checklist.getContent()  + "','" +
-                    CHECKLIST_DATE +" ='" +checklist.getDate() +/*",'" +CHECKLIST_TIEM+"='"+checklist.getTime()+ */"' WHERE _id=" + id);
+                    CHECKLIST_DATE +" ='" +checklist.getDate() +"' WHERE _id=" + id);
         }catch (SQLException err){
             Log.d("myLog",err.toString());
         }

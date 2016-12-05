@@ -1,91 +1,91 @@
-﻿# Life-Simulator  ( Just for the final project of our homework )
+# Life-Simulator  ( Just for the final project of our homework )
 
 Features 
 
-1.LogInSystem 使用者系統
+1.LogInSystem �ϥΪ̨t��
 
-輸入暱稱：使用者一開始只要需要輸入暱稱即可登入。
+��J�ʺ١G�ϥΪ̤@�}�l�u�n�ݭn��J�ʺ٧Y�i�n�J�C
 
-刪除帳號：使用者可以刪除該暱稱的帳號。
+�R���b���G�ϥΪ̥i�H�R���Ӽʺ٪��b���C
 
-使用者：擁有累積經驗值，升等機制。
+�ϥΪ̡G�֦��ֿn�g��ȡA�ɵ�����C
 
-2. Memo　筆記本
+2. Memo�@���O��
 
-新增：使用者可以新增項目供記載事項且選擇分類或新增分類，並且會記錄下新增日期。
+�s�W�G�ϥΪ̥i�H�s�W���بѰO���ƶ��B��ܤ����ηs�W�����A�åB�|�O���U�s�W����C
 
-刪除：點選按鈕刪除該項目。
+�R���G�I����s�R���Ӷ��ءC
 
-搜尋：根據分類篩選顯示項目。
-
-
-3. Schedule　行程表
-
-行程表：提供ListView，至08:00AM開始列表，每小時為一個Item。
-
-記錄行程：每個Item供使用者點選，並且輸入行程內容。
-
-時段：讀取系統時間在相對應的時間Item上亮出背景。
-
-刪除：一個按鍵清除所有行程。
-
-儲存：供使用者儲存行程。
-
-載入行程：儲存的項目供使用者載入使用。
-
-是否通知：使用者決定是否要接收推播來預告下個行程。
+�j�M�G�ھڤ����z����ܶ��ءC
 
 
-4.CheckList　待辦事項
+3. Schedule�@��{��
 
-儲存待辦事項：為一個多選的ListView，各個Item記載事項以及Deadline。
+��{���G����ListView�A��08:00AM�}�l�C���A�C�p�ɬ��@��Item�C
 
-新增：使用者新增一事項以及Deadline。
+�O����{�G�C��Item�ѨϥΪ��I��A�åB��J��{���e�C
 
-刪除：提供多選CheckBox一併刪除多個項目。
+�ɬq�GŪ���t�ήɶ��b�۹������ɶ�Item�W�G�X�I���C
 
-是否通知：使用者決定是否要接收推播來預告下個行程。
+�R���G�@�ӫ���M���Ҧ���{�C
+
+�x�s�G�ѨϥΪ��x�s��{�C
+
+���J��{�G�x�s�����بѨϥΪ̸��J�ϥΡC
+
+�O�_�q���G�ϥΪ̨M�w�O�_�n���������ӹw�i�U�Ӧ�{�C
+
+
+4.CheckList�@�ݿ�ƶ�
+
+�x�s�ݿ�ƶ��G���@�Ӧh�諸ListView�A�U��Item�O���ƶ��H��Deadline�C
+
+�s�W�G�ϥΪ̷s�W�@�ƶ��H��Deadline�C
+
+�R���G���Ѧh��CheckBox�@�֧R���h�Ӷ��ءC
+
+�O�_�q���G�ϥΪ̨M�w�O�_�n���������ӹw�i�U�Ӧ�{�C
 
 
 Regulations
 
-1.@+id/命名規則： 命名規則為適宜名稱+該Activity名稱，筆記本的新增按鈕: @+id/inputBTN_Memo
+1.@+id/�R�W�W�h�G �R�W�W�h���A�y�W��+��Activity�W�١A���O�����s�W���s: @+id/inputBTN_Memo
 
-2.常數規則：當需要傳入常數作為參數來連結各個功能，則先需要定義為類別變數public static final。
+2.�`�ƳW�h�G���ݭn�ǤJ�`�Ƨ@���Ѽƨӳs���U�ӥ\��A�h���ݭn�w�q�����O�ܼ�public static final�C
 
 
 Progress
 
-登入系統 ok
+�n�J�t�� ok
 
-遊戲主畫面  ok 
+�C���D�e��  ok 
 
-遊戲主畫面 所有元件 (功能的Image Button)
+�C���D�e�� �Ҧ����� (�\�઺Image Button)
 
-便條紙 UI ok
+�K���� UI ok
 
-便條紙TABLE ok
+�K����TABLE ok
 
-便條紙快取功能TABLE ok
+�K���ȧ֨��\��TABLE ok
 
-便條紙使用 新增 ok 刪除 ok 編輯 ok 分類搜尋 ok
+�K���Ȩϥ� �s�W ok �R�� ok �s�� ok �����j�M ok
 
-行程表 UI
+��{�� UI
 
-行程表 TABLE
+��{�� TABLE
 
-行程表快取TABLE
+��{���֨�TABLE
 
-行程表 儲存行程 載入行程 刪除行程 編輯單一行程 亮出時段 通知功能 使用者設定 
+��{�� �x�s��{ ���J��{ �R����{ �s���@��{ �G�X�ɬq �q���\�� �ϥΪ̳]�w 
 
 CheckList UI
 
 CheckList Table
 
-CheckList 新增 多選刪除 通知功能 編輯
+CheckList �s�W �h��R�� �q���\�� �s��
 
 
-水: 
+��: 
 
 11/7 Log In System finished
 
@@ -94,54 +94,58 @@ CheckList 新增 多選刪除 通知功能 編輯
 11/20 Start Developing Schedule
 
 
-邱:
+��:
 
-CheckList先交給你惹，慢慢鑽研xDD
+CheckList���浹�A�S�A�C�C�p��xDD
 
-11/6 思考人生
-11/8 雛形
+11/6 ��ҤH��
+11/8 ����
 
-11/12 水:
+11/12 ��:
 
-(1) 大改資料庫系統 配合 DB Open Helper (才能讓資料庫更新時自動刪除舊表格)
+(1) �j���Ʈw�t�� �t�X DB Open Helper (�~������Ʈw��s�ɦ۰ʧR���ª���)
 
-* 如果你要開一個表格:
-    * (1) 開一個class 繼承此類別 命名 Entity名稱_DB_Facade
-    * (2) 實踐所有SQL資料操作方法
-    * (3) 設私有建構子 傳遞表格名稱 及 createTable()
-    * (4) 在你的facade內新增方法 getFacade() 參考 User_DB_Facade
-    * (5) 在MyDbHelper中的onUpgrade(..)函數中新增一條指令實踐刪除你的表格 :
-    *   你的類別名稱.getFacade().dropTable();
+* �p�G�A�n�}�@�Ӫ���:
+    * (1) �}�@��class �~�Ӧ����O �R�W Entity�W��_DB_Facade
+    * (2) ���Ҧ�SQL��ƾާ@��k
+    * (3) �]�p���غc�l �ǻ�����W�� �� createTable()
+    * (4) �b�A��facade���s�W��k getFacade() �Ѧ� User_DB_Facade
+    * (5) �bMyDbHelper����onUpgrade(..)��Ƥ��s�W�@�����O���R���A������ :
+    *   �A�����O�W��.getFacade().dropTable();
 
-(2) Memo開發進度75%:
-   (1)Memo頁面
-   (2)Memo編輯頁面
-   (3)Memo展現頁面
-   (4)Memo資料庫儲存
+(2) Memo�}�o�i��75%:
+   (1)Memo����
+   (2)Memo�s�譶��
+   (3)Memo�i�{����
+   (4)Memo��Ʈw�x�s
   
-11/15 水：
+11/15 ���G
 
-(1) Weak Entity 測試 Android SQL 根本沒支援 Weak entity 的設置阿 !!!!!
-更新SQL語法 
+(1) Weak Entity ���� Android SQL �ڥ��S�䴩 Weak entity ���]�m�� !!!!!
+��sSQL�y�k 
 
-11/17 水：
+11/17 ���G
 
-Memo功能完成。
+Memo�\�৹���C
 
-11/19 水：
+11/19 ���G
 
-Schedule facade介面建立
+Schedule facade�����إ�
 
-11/26 水：
+11/26 ���G
 
-增加經驗值系統，增加卡片瀏覽模式
+�W�[�g��Ȩt�ΡA�W�[�d���s���Ҧ�
 
-12/5 鳥豐:
+12/5 �� :
+       CheckList Delete and modify not yet finish .
+       �|�ʦh��R��   �O�_�q���G�ϥΪ̨M�w�O�_�n���������ӹw�i�U�Ӧ�{�C
 
-增加倒數日基本架構
 
 
-測試status ~~~
+
+When finished your task, you can add some new features like �˼Ƥ�
+
+����status ~~~
 
 
 
