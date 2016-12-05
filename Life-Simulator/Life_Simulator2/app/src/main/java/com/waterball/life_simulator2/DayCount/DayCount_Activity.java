@@ -102,7 +102,7 @@ public class DayCount_Activity extends AppCompatActivity {
                 LayoutInflater inflater = LayoutInflater.from(DayCount_Activity.this);
                 View v=inflater.inflate(R.layout.activity_day_count__add_,null);
 
-                AlertDialog.Builder builder=new AlertDialog.Builder(DayCount_Activity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(DayCount_Activity.this);
                 builder.setTitle("新增事件");
                 builder.setView(v);
                 builder.setCancelable(true);
@@ -113,7 +113,8 @@ public class DayCount_Activity extends AppCompatActivity {
 
                 //跳出日期選擇
                 edt_date_add.setOnClickListener(this);
-                final DatePickerDialog.OnDateSetListener datepicker = new DatePickerDialog.OnDateSetListener() {
+
+                DatePickerDialog.OnDateSetListener datepicker = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         m_Calender.set(Calendar.YEAR, year);
@@ -126,6 +127,14 @@ public class DayCount_Activity extends AppCompatActivity {
                 };
 
 
+                    DatePickerDialog dialog =
+                            new DatePickerDialog(DayCount_Activity.this,datepicker,
+                                m_Calender.get(Calendar.YEAR),
+                                m_Calender.get(Calendar.MONTH),
+                                m_Calender.get(Calendar.DAY_OF_MONTH));
+                dialog.show();
+
+
                 //按確認新增
                 btn_add.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -133,7 +142,11 @@ public class DayCount_Activity extends AppCompatActivity {
 
                     }
                 });
+
             }
         });
+
     }
+
+
 }
